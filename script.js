@@ -389,3 +389,47 @@ seatRandomerSelect.addEventListener('change', function(){
 	setConfigToLocalStorage();
 	switchRandomizeBtn();
 });
+
+const bgImage = [
+	"background/1.JPG",
+	"background/2.JPG",
+	"background/3.JPG",
+	"background/4.JPG",
+	"background/5.JPG",
+	"background/6.JPG",
+	"background/7.JPG",
+	"background/8.JPG",
+	"background/9.JPG"
+]
+
+document.addEventListener("DOMContentLoaded", () => {
+	const bgContainer = document.querySelector(".main-bg img");
+	let currIdx = 0;
+
+	setInterval(() => {
+		bgContainer.style.filter = "blur(0.3125rem)";
+		bgContainer.style.opacity = 0.025;
+		
+		let nowIdx = Math.floor(Math.random() * bgImage.length);
+		if (nowIdx == currIdx){
+			nowIdx++;
+			
+			if(nowIdx > bgImage.length-1){
+				nowIdx %= bgImage.length;
+			}
+		}
+		
+		const newImage = document.createElement("img");
+		newImage.src = bgImage[nowIdx];
+		
+		newImage.onload = () => {
+			setTimeout(() => {
+				bgContainer.src = newImage.src;
+				bgContainer.style.opacity = 0.2;
+				bgContainer.style.filter = "blur(0)";
+			}, 1500);
+		};
+
+		currIdx = nowIdx;
+	}, 7000);
+});

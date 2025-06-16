@@ -397,9 +397,9 @@ const bgImage = [
 	"background/4.JPG",
 	"background/5.JPG",
 	"background/6.JPG",
-	"background/7.JPG",
-	"background/8.JPG",
-	"background/9.JPG"
+	"background/7.jpg",
+	"background/8.jpg",
+	"background/9.jpg"
 ]
 
 document.addEventListener("DOMContentLoaded", () => {

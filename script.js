@@ -306,19 +306,22 @@ randomizeBtns.forEach(randomizeBtn => randomizeBtn.addEventListener("click", asy
 }));
 
 refreshSeatsEl.addEventListener("click", function () {
-	localStorage.removeItem(`${keyPrefix}_RANDOMIZED`);
-	document.querySelectorAll(".seat").forEach((el) => {
-		el.classList.remove("seat-occupied");
-		const nameEL = el.querySelector(".name");
-		nameEL.innerHTML = "<p class='red'>NONE</p>";
-	});
-	updateRemainingSeats();
-	balls = []; // in canvas.js
-	numbers = createSequenceOfNumbers(1, totalSeats);
-
-	// start - for carantine purpose
-	highlightOccupiedSeats();
-	// end
+	const confirmation = confirm("Do you really want to refresh all seats?");
+	if(confirmation){
+		localStorage.removeItem(`${keyPrefix}_RANDOMIZED`);
+		document.querySelectorAll(".seat").forEach((el) => {
+			el.classList.remove("seat-occupied");
+			const nameEL = el.querySelector(".name");
+			nameEL.innerHTML = "<p class='red'>NONE</p>";
+		});
+		updateRemainingSeats();
+		balls = []; // in canvas.js
+		numbers = createSequenceOfNumbers(1, totalSeats);
+	
+		// start - for carantine purpose
+		highlightOccupiedSeats();
+		// end
+	}
 });
 
 

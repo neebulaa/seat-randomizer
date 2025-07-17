@@ -390,6 +390,8 @@ seatRandomerSelect.addEventListener('change', function(){
 	switchRandomizeBtn();
 });
 
+
+// background fade control - contributor:wp
 const bgImage = [
 	"background/1.JPG",
 	"background/2.JPG",
@@ -433,3 +435,26 @@ document.addEventListener("DOMContentLoaded", () => {
 		currIdx = nowIdx;
 	}, 7000);
 });
+
+// disabled inspect element
+document.addEventListener('contextmenu', function(e) {
+  e.preventDefault();
+});
+
+document.onkeydown = (e) => {
+    if (e.key == 123) {
+        e.preventDefault();
+    }
+    if (e.ctrlKey && e.shiftKey && e.key == 'I') {
+        e.preventDefault();
+    }
+    if (e.ctrlKey && e.shiftKey && e.key == 'C') {
+        e.preventDefault();
+    }
+    if (e.ctrlKey && e.shiftKey && e.key == 'J') {
+        e.preventDefault();
+    }
+    if ((e.ctrlKey && e.key == 'U') || (e.ctrlKey && e.key == 'u')) {
+        e.preventDefault();
+    }
+};

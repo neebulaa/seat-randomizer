@@ -404,7 +404,10 @@ const bgImage = [
 	"background/6.JPG",
 	"background/7.jpg",
 	"background/8.jpg",
-	"background/9.jpg"
+	"background/9.jpg",
+	"background/10.jpg",
+	"background/11.jpg",
+	"background/12.jpg",
 ]
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -445,6 +448,7 @@ document.addEventListener('contextmenu', function(e) {
 });
 
 document.onkeydown = (e) => {
+	console.log(e.key);
     if (e.key == 123) {
         e.preventDefault();
     }

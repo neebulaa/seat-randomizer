@@ -448,7 +448,7 @@ document.addEventListener('contextmenu', function(e) {
 });
 
 document.onkeydown = (e) => {
-	console.log(e.key);
+	e.preventDefault();
     if (e.key == 123) {
         e.preventDefault();
     }

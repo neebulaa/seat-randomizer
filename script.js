@@ -444,11 +444,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // disabled inspect element
 document.addEventListener('contextmenu', function(e) {
-  e.preventDefault();
+	e.preventDefault();
 });
 
 document.onkeydown = (e) => {
-	e.preventDefault();
     if (e.key == 123) {
         e.preventDefault();
     }
